@@ -17,4 +17,21 @@ public class Gaulois {
 	public int getEffetPotion() {
 		return effetPotion;
 	}
+	public String getNom() {
+		return nom;
+	}
+	@Override
+	public String toString() {
+		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+	}
+	public static void main(String[] args) {
+		switch (key) {
+		case value: {
+			
+			yield type;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + key);
+		}
+	}
 }
