@@ -18,3 +18,5 @@ public class Gaulois {
 		return effetPotion;
 	}
 }
+
+//changement inutile c'est justepour parler
