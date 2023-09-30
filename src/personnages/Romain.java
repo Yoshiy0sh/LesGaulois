@@ -5,12 +5,20 @@ public class Romain {
 	private int force;
 	
 	public Romain(String nom,int force) {
+		super();
+		assert force > 0;
 		this.nom = nom;
 		this.force  = force;
 	}
 	
+// rule s4274 désactivée pour le donctionnement des assert
+	
 	public String getNom() {
 		return nom;
+	}
+	
+	public int getForce() {
+		return force;
 	}
 	
 	public void parler(String texte) {
@@ -23,17 +31,19 @@ public class Romain {
 	}
 	
 	public void recevoirCoup(int forceCoup) {
+		int force_debut = getForce();
+		assert force_debut >0;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aïe");
 		} else {
 			parler("J'abandonne");
 		}
+		assert getForce() < force_debut;
 	}
+	
 	public static void main(String[] args) {
-		Romain jeanLeRomain = new Romain("jeanLeRomain",8);
-		String parole = jeanLeRomain.prendreParole();
-		jeanLeRomain.parler("je suis un romain et je viens de parler haha lol");
-		jeanLeRomain.recevoirCoup(12);
+		Romain minus = new Romain("Minus",-6);
+		System.out.println(minus.getForce());
 	}
 }
